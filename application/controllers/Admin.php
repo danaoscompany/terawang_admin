@@ -684,4 +684,76 @@ class Admin extends CI_Controller {
 			}
 		}
 	}
+
+	public function get_donations() {
+		echo json_encode($this->db->get('donations')->result_array());
+	}
+
+	public function delete_donation() {
+		$id = $this->input->post('id');
+		$this->db->query("DELETE FROM `donations` WHERE `id`=" . $id);
+	}
+
+	public function add_donation() {
+		$name = $this->input->post('name');
+		$bank = $this->input->post('bank');
+		$accountNumber = $this->input->post('account_number');
+		$this->db->insert('donations', array(
+			'name' => $name,
+			'bank' => $bank,
+			'account_number' => $accountNumber
+		));
+	}
+
+	public function update_donation() {
+		$id = $this->input->post('id');
+		$name = $this->input->post('name');
+		$bank = $this->input->post('bank');
+		$accountNumber = $this->input->post('account_number');
+		$this->db->where('id', $id);
+		$this->db->update('donations', array(
+			'name' => $name,
+			'bank' => $bank,
+			'account_number' => $accountNumber
+		));
+	}
+
+	public function get_donation() {
+		$id = $this->input->post('id');
+		echo json_encode($this->db->query("SELECT * FROM `donations` WHERE `id`=" . $id)->row_array());
+	}
+
+	public function get_contacts() {
+		echo json_encode($this->db->query("SELECT * FROM `contacts`")->result_array());
+	}
+
+	public function add_contact() {
+		$type = $this->input->post('type');
+		$number = $this->input->post('number');
+		$this->db->insert('contacts', array(
+			'type' => $type,
+			'number' => $number
+		));
+	}
+
+	public function delete_contact() {
+		$id = $this->input->post('id');
+		$this->db->query("DELETE FROM `contacts` WHERE `id`=" . $id);
+	}
+
+	public function get_contact() {
+		$id = $this->input->post('id');
+		echo json_encode($this->db->query("SELECT * FROM `contacts` WHERE `id`=" . $id)->row_array());
+	}
+
+	public function update_contact() {
+		$id = $this->input->post('id');
+		$type = $this->input->post('type');
+		$number = $this->input->post('number');
+		$this->db->where('id', $id);
+		$this->db->update('contacts', array(
+			'type' => $type,
+			'number' => $number
+		));
+	}
 }

@@ -63,6 +63,18 @@
 			</a>
 		</li>
 		<li class="nav-item">
+			<a class="<?php echo ($current_menu == 'donation')?'nav-link active':'nav-link' ?>" href="http://terawang.co/admin/donation">
+				<i class="material-icons">volunteer_activism</i>
+				<span>Donasi <Kredit></Kredit></span>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a class="<?php echo ($current_menu == 'contact')?'nav-link active':'nav-link' ?>" href="http://terawang.co/admin/contact">
+				<i class="material-icons">call</i>
+				<span>Kontak <Kredit></Kredit></span>
+			</a>
+		</li>
+		<li class="nav-item">
 			<a class="<?php echo ($current_menu == 'terms')?'nav-link active':'nav-link' ?>" href="http://terawang.co/admin/terms">
 				<i class="material-icons">error</i>
 				<span>Kebijakan Penggunaan <Kredit></Kredit></span>
