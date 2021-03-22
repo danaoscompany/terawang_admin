@@ -232,8 +232,23 @@ class User extends CI_Controller {
 				$this->send_question_to_admin($userID, $question, $date, 1);
 			}
 		} else {
-			$this->db->query("UPDATE `users` SET `last_question_date`='" . $date . "' WHERE `id`=" . $userID);
-			$this->send_question_to_admin($userID, $question, $date, 1);
+			$questionsAskedMonthly = intval($user['questions_asked_monthly']);
+			if ($premium == 1 && $questionsAskedMonthly >= 10) {
+				$this->db->query("UPDATE `users` SET `premium`=0 WHERE `id`=" . $userID);
+				echo json_encode(array('response_code' => -2));
+			} else if ($premium == 3 && $questionsAskedMonthly >= 30) {
+				$this->db->query("UPDATE `users` SET `premium`=0 WHERE `id`=" . $userID);
+				echo json_encode(array('response_code' => -2));
+			} else if ($premium == 6 && $questionsAskedMonthly >= 60) {
+				$this->db->query("UPDATE `users` SET `premium`=0 WHERE `id`=" . $userID);
+				echo json_encode(array('response_code' => -2));
+			} else if ($premium == 12 && $questionsAskedMonthly >= 120) {
+				$this->db->query("UPDATE `users` SET `premium`=0 WHERE `id`=" . $userID);
+				echo json_encode(array('response_code' => -2));
+			} else {
+				$this->db->query("UPDATE `users` SET `last_question_date`='" . $date . "' WHERE `id`=" . $userID);
+				$this->send_question_to_admin($userID, $question, $date, 1);
+			}
 		}
 	}
 	
@@ -270,6 +285,7 @@ class User extends CI_Controller {
 		));
 		$questionID = $this->db->insert_id();
 		$this->db->query("UPDATE `users` SET `questions_asked`=`questions_asked`+1 WHERE `id`=" . $userID);
+		$this->db->query("UPDATE `users` SET `questions_asked_monthly`=`questions_asked_monthly`+1 WHERE `id`=" . $userID);
 		if ($premium == 0) {
 			if ($credits > 0) {
 				$this->db->query("UPDATE `users` SET `credits`=`credits`-1 WHERE `id`=" . $userID);
@@ -332,7 +348,7 @@ class User extends CI_Controller {
 		$id = intval($this->input->post('id'));
 		$premium = intval($this->input->post('premium'));
 		$month = intval($this->input->post('month'));
-		$this->db->query("UPDATE `users` SET `premium`=" . $premium . ", `premium_months`=" . $month . " WHERE `id`=" . $id);
+		$this->db->query("UPDATE `users` SET `premium`=" . $premium . ", `premium_months`=" . $month . ", `questions_asked_monthly`=0 WHERE `id`=" . $id);
 		echo json_encode($this->db->query("SELECT * FROM `users` WHERE `id`=" . $id)->row_array());
 	}
 	

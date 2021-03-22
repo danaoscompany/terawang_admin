@@ -682,6 +682,16 @@ class Admin extends CI_Controller {
 					$this->db->query("UPDATE `users` SET `premium`=0, `premium_months`=0 WHERE `id`=" . $user['id']);
 				}
 			}
+			$questionsAskedMonthly = intval($user['questions_asked_monthly']);
+			if ($premium == 1 && $questionsAskedMonthly >= 10) {
+				$this->db->query("UPDATE `users` SET `premium`=0 WHERE `id`=" . $userID);
+			} else if ($premium == 3 && $questionsAskedMonthly >= 30) {
+				$this->db->query("UPDATE `users` SET `premium`=0 WHERE `id`=" . $userID);
+			} else if ($premium == 6 && $questionsAskedMonthly >= 60) {
+				$this->db->query("UPDATE `users` SET `premium`=0 WHERE `id`=" . $userID);
+			} else if ($premium == 12 && $questionsAskedMonthly >= 120) {
+				$this->db->query("UPDATE `users` SET `premium`=0 WHERE `id`=" . $userID);
+			}
 		}
 	}
 
@@ -754,6 +764,25 @@ class Admin extends CI_Controller {
 		$this->db->update('contacts', array(
 			'type' => $type,
 			'number' => $number
+		));
+	}
+
+	public function update_settings() {
+		$freeQuestionsPerMonth = intval($this->input->post('free_questions_per_month'));
+		$address = $this->input->post('address');
+		$igLink = $this->input->post('ig_link');
+		$fbLink = $this->input->post('fb_link');
+		$twitterLink = $this->input->post('twitter_link');
+		$copyright = $this->input->post('copyright');
+		$promoVideo = $this->input->post('promo_video');
+		$this->db->update('settings', array(
+			'free_questions_per_month' => $freeQuestionsPerMonth,
+			'address' => $address,
+			'ig_link' => $igLink,
+			'fb_link' => $fbLink,
+			'twitter_link' => $twitterLink,
+			'copyright' => $copyright,
+			'promo_video' => $promoVideo
 		));
 	}
 }

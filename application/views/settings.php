@@ -72,42 +72,62 @@
 										<h6 class="m-0">Ubah Pengaturan</h6>
 										<div class="input-group mb-3" style="margin-top: 16px;">
 											<div class="input-group input-group-seamless">
-												<span class="input-group-prepend">
-                              						<span class="input-group-text">
-                                						<i class="material-icons">person</i>
-                              						</span>
-                            					</span>
-												<input type="number" class="form-control" id="free-questions-per-month"
-													   placeholder="Pertanyaan Gratis Per Bulan"></div>
-										</div>
-										<div class="input-group mb-3" style="margin-top: 0;">
-											<div class="input-group input-group-seamless">
-												<span class="input-group-prepend">
-                              						<span class="input-group-text">
-                                						<i class="material-icons">help</i>
-                              						</span>
-                            					</span>
-												<textarea id="howto-id" class="form-control" name="feDescription" placeholder="Cara Kerja (Bahasa Indonesia)" rows="5"></textarea>
-											</div>
-										</div>
-										<div class="input-group mb-3" style="margin-top: 0;">
-											<div class="input-group input-group-seamless">
-												<span class="input-group-prepend">
-                              						<span class="input-group-text">
-                                						<i class="material-icons">help</i>
-                              						</span>
-                            					</span>
-												<textarea id="howto-en" class="form-control" name="feDescription" placeholder="Cara Kerja (English)" rows="5"></textarea>
-											</div>
-										</div>
-										<div class="input-group mb-3" style="margin-top: 0;">
-											<div class="input-group input-group-seamless">
-												<span class="input-group-prepend">
-                              						<span class="input-group-text">
-                                						<i class="material-icons">help</i>
-                              						</span>
-                            					</span>
-												<textarea id="howto-zh" class="form-control" name="feDescription" placeholder="Cara Kerja (Bahasa Cina)" rows="5"></textarea>
+												<div class="m-0">Pertanyaan Gratis Per Bulan:</div>
+												<div class="input-group mb-3">
+													<div class="input-group input-group-seamless">
+														<input type="number" class="form-control" id="free-questions-per-month"
+															   placeholder="Pertanyaan Gratis Per Bulan"
+														       style="margin-top: 4px;">
+													</div>
+												</div>
+												<div class="m-0">Alamat:</div>
+												<div class="input-group mb-3">
+													<div class="input-group input-group-seamless">
+														<input type="text" class="form-control" id="address"
+															   placeholder="Masukkan Alamat"
+															   style="margin-top: 4px;">
+													</div>
+												</div>
+												<div class="m-0">Link Instagram:</div>
+												<div class="input-group mb-3">
+													<div class="input-group input-group-seamless">
+														<input type="text" class="form-control" id="ig-link"
+															   placeholder="Masukkan link instagram"
+															   style="margin-top: 4px;">
+													</div>
+												</div>
+												<div class="m-0">Link Twitter:</div>
+												<div class="input-group mb-3">
+													<div class="input-group input-group-seamless">
+														<input type="text" class="form-control" id="twitter-link"
+															   placeholder="Masukkan link twitter"
+															   style="margin-top: 4px;">
+													</div>
+												</div>
+												<div class="m-0">Link Facebook:</div>
+												<div class="input-group mb-3">
+													<div class="input-group input-group-seamless">
+														<input type="text" class="form-control" id="fb-link"
+															   placeholder="Masukkan link facebook"
+															   style="margin-top: 4px;">
+													</div>
+												</div>
+												<div class="m-0">Copyright:</div>
+												<div class="input-group mb-3">
+													<div class="input-group input-group-seamless">
+														<input type="text" class="form-control" id="copyright"
+															   placeholder="Masukkan copyright"
+															   style="margin-top: 4px;">
+													</div>
+												</div>
+												<div class="m-0">ID Video YouTube:</div>
+												<div class="input-group mb-3">
+													<div class="input-group input-group-seamless">
+														<input type="text" class="form-control" id="youtube-video-id"
+															   placeholder="Masukkan ID video YouTube"
+															   style="margin-top: 4px;">
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>

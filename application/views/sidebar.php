@@ -51,12 +51,6 @@
 			</a>
 		</li>
 		<li class="nav-item">
-			<a class="<?php echo ($current_menu == 'settings')?'nav-link active':'nav-link' ?>" href="http://terawang.co/admin/settings">
-				<i class="material-icons">settings</i>
-				<span>Pengaturan <Kredit></Kredit></span>
-			</a>
-		</li>
-		<li class="nav-item">
 			<a class="<?php echo ($current_menu == 'howto')?'nav-link active':'nav-link' ?>" href="http://terawang.co/admin/howto">
 				<i class="material-icons">help</i>
 				<span>Cara Kerja <Kredit></Kredit></span>
@@ -84,6 +78,12 @@
 			<a class="<?php echo ($current_menu == 'privacy_policy')?'nav-link active':'nav-link' ?>" href="http://terawang.co/admin/privacypolicy">
 				<i class="material-icons">privacy_tip</i>
 				<span>Kebijakan Privasi <Kredit></Kredit></span>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a class="<?php echo ($current_menu == 'settings')?'nav-link active':'nav-link' ?>" href="http://terawang.co/admin/settings">
+				<i class="material-icons">settings</i>
+				<span>Pengaturan <Kredit></Kredit></span>
 			</a>
 		</li>
 		<li class="nav-item">
