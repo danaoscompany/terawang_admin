@@ -100,9 +100,9 @@ class User extends CI_Controller {
 		$lang = $this->input->post('lang');
 		$code = Util::generateRandomNumber(4);
 		if ($lang == "in") {
-			Util::send_email($email, "Kode verifikasi Fortune Teller Anda: " . $code, "Mohon masukkan 4-digit kode berikut di kolom yang disediakan di aplikasi Anda: <b>" . $code . "</b>");
+			Util::send_email($email, "Kode verifikasi Terawang Anda: " . $code, "Mohon masukkan 4-digit kode berikut di kolom yang disediakan di aplikasi Anda: <b>" . $code . "</b>");
 		} else if ($lang == "en") {
-			Util::send_email($email, "Your Fortune Teller verification code: " . $code, "Please enter this 4-digit numeric codes in the field that is shown within your app: <b>" . $code . "</b>");
+			Util::send_email($email, "Your Terawang verification code: " . $code, "Please enter this 4-digit numeric codes in the field that is shown within your app: <b>" . $code . "</b>");
 		} else if ($lang == "zh") {
 			Util::send_email($email, "您的算命先生验证码： " . $code, "请在您的应用程序提供的字段中输入以下4位代码： <b>" . $code . "</b>");
 		}

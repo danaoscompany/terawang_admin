@@ -19,7 +19,7 @@ class Util extends CI_Controller {
 			$mail->Password   = 'HaloDunia123';
 			$mail->SMTPSecure = "ssl";
 			$mail->Port       = 465;
-			$mail->setFrom('danaos.mailsender@gmail.com', 'Fortune Teller');
+			$mail->setFrom('danaos.mailsender@gmail.com', 'Terawang');
 			$mail->addAddress($to);
 			$mail->addReplyTo('danaos.mailsender@gmail.com', 'Reply to this email');
 			$mail->isHTML(true);
