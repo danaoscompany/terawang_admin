@@ -47,32 +47,52 @@ class User extends CI_Controller {
 		$birthPlace = $this->input->post('birth_place');
 		$birthday = $this->input->post('birthday');
 		$phone = $this->input->post('phone');
+		$emailAlreadyRegistered = false;
+		$phoneAlreadyRegistered = false;
 		if ($this->db->query("SELECT * FROM `users` WHERE `email`='" . $email . "'")->num_rows() > 0) {
-			echo json_encode(array(
-				'response_code' => -1
-			));
-			return;
+			$emailAlreadyRegistered = true;
 		}
 		if ($this->db->query("SELECT * FROM `users` WHERE `phone`='" . $phone . "'")->num_rows() > 0) {
-			echo json_encode(array(
-				'response_code' => -2
-			));
-			return;
+			$phoneAlreadyRegistered = true;
 		}
-		$this->db->insert('users', array(
-			'name' => $name,
-			'email' => $email,
-			'password' => $password,
-			'birth_place' => $birthPlace,
-			'birthday' => $birthday,
-			'phone' => $phone
-		));
+		if ($emailAlreadyRegistered) {
+			$this->db->where('email', $email);
+			$this->db->update('users', array(
+				'name' => $name,
+				'email' => $email,
+				'password' => $password,
+				'birth_place' => $birthPlace,
+				'birthday' => $birthday,
+				'phone' => $phone
+			));
+		}
+		if ($phoneAlreadyRegistered) {
+			$this->db->where('phone', $phone);
+			$this->db->update('users', array(
+				'name' => $name,
+				'email' => $email,
+				'password' => $password,
+				'birth_place' => $birthPlace,
+				'birthday' => $birthday,
+				'phone' => $phone
+			));
+		}
+		if (!$emailAlreadyRegistered && !$phoneAlreadyRegistered) {
+			$this->db->insert('users', array(
+				'name' => $name,
+				'email' => $email,
+				'password' => $password,
+				'birth_place' => $birthPlace,
+				'birthday' => $birthday,
+				'phone' => $phone
+			));
+		}
 		$userID = intval($this->db->insert_id());
 		$user = $this->db->query("SELECT * FROM `users` WHERE `id`=" . $userID)->row_array();
 		$user['response_code'] = 1;
 		echo json_encode($user);
 	}
-	
+
 	public function signup_with_google() {
 		$name = $this->input->post('name');
 		$email = $this->input->post('email');
