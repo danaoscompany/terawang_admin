@@ -51,11 +51,19 @@ class User extends CI_Controller {
 		$phoneAlreadyRegistered = false;
 		if ($this->db->query("SELECT * FROM `users` WHERE `email`='" . $email . "'")->num_rows() > 0) {
 			$emailAlreadyRegistered = true;
+			echo json_encode(array(
+				'response_code' => -1
+			));
+			return;
 		}
 		if ($this->db->query("SELECT * FROM `users` WHERE `phone`='" . $phone . "'")->num_rows() > 0) {
 			$phoneAlreadyRegistered = true;
+			echo json_encode(array(
+				'response_code' => -2
+			));
+			return;
 		}
-		if ($emailAlreadyRegistered) {
+		/*if ($emailAlreadyRegistered) {
 			$this->db->where('email', $email);
 			$this->db->update('users', array(
 				'name' => $name,
@@ -76,7 +84,7 @@ class User extends CI_Controller {
 				'birthday' => $birthday,
 				'phone' => $phone
 			));
-		}
+		}*/
 		if (!$emailAlreadyRegistered && !$phoneAlreadyRegistered) {
 			$this->db->insert('users', array(
 				'name' => $name,
