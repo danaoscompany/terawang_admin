@@ -10,7 +10,7 @@ class Util extends CI_Controller {
 
 	public static function send_email($to, $subject, $body) {
 		$mail = new PHPMailer(true);
-		try {
+		/*try {
 			$mail->SMTPDebug = 0;
 			$mail->isSMTP();
 			$mail->Host       = 'smtp.gmail.com';
@@ -22,6 +22,26 @@ class Util extends CI_Controller {
 			$mail->setFrom('danaos.mailsender@gmail.com', 'Terawang');
 			$mail->addAddress($to);
 			$mail->addReplyTo('danaos.mailsender@gmail.com', 'Reply to this email');
+			$mail->isHTML(true);
+			$mail->Subject = $subject;
+			$mail->Body    = $body;
+			$mail->send();
+			//echo 'Message has been sent';
+		} catch (Exception $e) {
+			//echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+		}*/
+		try {
+			$mail->SMTPDebug = 0;
+			$mail->isSMTP();
+			$mail->Host       = 'premium160.web-hosting.com';
+			$mail->SMTPAuth   = true;
+			$mail->Username   = 'admin2@terawang.co';
+			$mail->Password   = '*YlPy*o+Qqpe';
+			$mail->SMTPSecure = "ssl";
+			$mail->Port       = 465;
+			$mail->setFrom('admin2@terawang.co', 'Terawang');
+			$mail->addAddress($to);
+			$mail->addReplyTo('admin2@terawang.co', 'Reply to this email');
 			$mail->isHTML(true);
 			$mail->Subject = $subject;
 			$mail->Body    = $body;
