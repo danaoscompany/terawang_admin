@@ -127,6 +127,15 @@ class Admin extends CI_Controller {
 		echo json_encode($questions);
 	}
 
+	public function search_questions() {
+		$keyword = $this->input->post('keyword');
+		$questions = $this->db->query("SELECT * FROM `questions` WHERE `question` LIKE '%" . $keyword . "%' ORDER BY `date` DESC")->result_array();
+		for ($i=0; $i<sizeof($questions); $i++) {
+			$questions[$i]['user'] = $this->db->query("SELECT * FROM `users` WHERE `id`=" . $questions[$i]['user_id'])->row_array();
+		}
+		echo json_encode($questions);
+	}
+
 	public function get_question_by_id() {
 		$id = intval($this->input->post('id'));
 		$question = $this->db->query("SELECT * FROM `questions` WHERE `id`=" . $id)->row_array();
@@ -474,6 +483,11 @@ class Admin extends CI_Controller {
 
 	public function get_users() {
 		echo json_encode($this->db->query("SELECT * FROM `users` ORDER BY `name`")->result_array());
+	}
+
+	public function search_users() {
+		$keyword = $this->input->post('keyword');
+		echo json_encode($this->db->query("SELECT * FROM `users` WHERE `name` LIKE '%" . $keyword . "%' ORDER BY `name`")->result_array());
 	}
 
 	public function add_user() {

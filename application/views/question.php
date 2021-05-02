@@ -55,8 +55,8 @@
 				<!-- Page Header -->
 				<div class="page-header row no-gutters py-4">
 					<div class="col-12 col-sm-4 text-center text-sm-left mb-0">
-						<span class="text-uppercase page-subtitle">Notifikasi</span>
-						<h3 class="page-title">Notifikasi</h3>
+						<span class="text-uppercase page-subtitle">Pertanyaan</span>
+						<h3 class="page-title">Pertanyaan</h3>
 
 					</div>
 				</div>
@@ -65,7 +65,7 @@
 					<div class="col">
 						<div class="card card-small mb-4" style="margin-top: 8px;">
 							<div class="card-header border-bottom">
-								<h6 class="m-0">Notifikasi</h6>
+								<h6 class="m-0">Pertanyaan</h6>
 							</div>
 							<div class="card-body p-0 pb-3 text-center">
 								<table class="table mb-0">
