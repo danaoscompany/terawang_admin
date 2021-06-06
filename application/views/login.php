@@ -7,26 +7,26 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="http://terawang.co/admin/assets/images/icons/favicon.ico"/>
+	<link rel="icon" type="image/png" href="http://192.168.43.254/idjobfinder/assets/images/icons/favicon.ico"/>
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="http://terawang.co/admin/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="http://192.168.43.254/idjobfinder/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="http://terawang.co/admin/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="http://192.168.43.254/idjobfinder/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="http://terawang.co/admin/assets/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="http://192.168.43.254/idjobfinder/assets/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="http://terawang.co/admin/vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="http://192.168.43.254/idjobfinder/vendor/animate/animate.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="http://terawang.co/admin/vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="http://192.168.43.254/idjobfinder/vendor/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="http://terawang.co/admin/vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="http://192.168.43.254/idjobfinder/vendor/animsition/css/animsition.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="http://terawang.co/admin/vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="http://192.168.43.254/idjobfinder/vendor/select2/select2.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="http://terawang.co/admin/vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="http://192.168.43.254/idjobfinder/vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="http://terawang.co/admin/assets/css/util.css">
-	<link rel="stylesheet" type="text/css" href="http://terawang.co/admin/assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="http://192.168.43.254/idjobfinder/assets/css/util.css">
+	<link rel="stylesheet" type="text/css" href="http://192.168.43.254/idjobfinder/assets/css/main.css">
 <!--===============================================================================================-->
 </head>
 <body>
@@ -83,23 +83,23 @@
 	<div id="dropDownSelect1"></div>
 	
 <!--===============================================================================================-->
-	<script src="http://terawang.co/admin/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="http://192.168.43.254/idjobfinder/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
-	<script src="http://terawang.co/admin/vendor/animsition/js/animsition.min.js"></script>
+	<script src="http://192.168.43.254/idjobfinder/vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
-	<script src="http://terawang.co/admin/vendor/bootstrap/js/popper.js"></script>
-	<script src="http://terawang.co/admin/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="http://192.168.43.254/idjobfinder/vendor/bootstrap/js/popper.js"></script>
+	<script src="http://192.168.43.254/idjobfinder/vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
-	<script src="http://terawang.co/admin/vendor/select2/select2.min.js"></script>
+	<script src="http://192.168.43.254/idjobfinder/vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->
-	<script src="http://terawang.co/admin/vendor/daterangepicker/moment.min.js"></script>
-	<script src="http://terawang.co/admin/vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="http://192.168.43.254/idjobfinder/vendor/daterangepicker/moment.min.js"></script>
+	<script src="http://192.168.43.254/idjobfinder/vendor/daterangepicker/daterangepicker.js"></script>
 <!--===============================================================================================-->
-	<script src="http://terawang.co/admin/vendor/countdowntime/countdowntime.js"></script>
-	<script src="http://terawang.co/admin/js/global.js"></script>
-	<script src="http://terawang.co/admin/js/login.js"></script>
+	<script src="http://192.168.43.254/idjobfinder/vendor/countdowntime/countdowntime.js"></script>
+	<script src="http://192.168.43.254/idjobfinder/js/global.js"></script>
+	<script src="http://192.168.43.254/idjobfinder/js/login.js"></script>
 <!--===============================================================================================-->
-	<script src="http://terawang.co/admin/assets/js/main.js"></script>
+	<script src="http://192.168.43.254/idjobfinder/assets/js/main.js"></script>
 
 </body>
 </html>

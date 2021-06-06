@@ -1,72 +1,44 @@
 <?php
 
-require 'phpmailer/Exception.php';
-require 'phpmailer/PHPMailer.php';
-require 'phpmailer/SMTP.php';
+require 'mailer/Exception.php';
+require 'mailer/PHPMailer.php';
+require 'mailer/SMTP.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 
-class Util extends CI_Controller {
-
+class Util {
+	
 	public static function send_email($to, $subject, $body) {
 		$mail = new PHPMailer(true);
-		/*try {
-			$mail->SMTPDebug = 0;
-			$mail->isSMTP();
-			$mail->Host       = 'smtp.gmail.com';
-			$mail->SMTPAuth   = true;
-			$mail->Username   = 'danaos.mailsender@gmail.com';
-			$mail->Password   = 'HaloDunia123';
-			$mail->SMTPSecure = "ssl";
-			$mail->Port       = 465;
-			$mail->setFrom('danaos.mailsender@gmail.com', 'Terawang');
-			$mail->addAddress($to);
-			$mail->addReplyTo('danaos.mailsender@gmail.com', 'Reply to this email');
-			$mail->isHTML(true);
-			$mail->Subject = $subject;
-			$mail->Body    = $body;
-			$mail->send();
-			//echo 'Message has been sent';
-		} catch (Exception $e) {
-			//echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-		}*/
 		try {
-			$mail->SMTPDebug = 0;
-			$mail->isSMTP();
-			$mail->Host       = 'premium160.web-hosting.com';
-			$mail->SMTPAuth   = true;
-			$mail->Username   = 'admin2@terawang.co';
-			$mail->Password   = '*YlPy*o+Qqpe';
-			$mail->SMTPSecure = "ssl";
-			$mail->Port       = 465;
-			$mail->setFrom('admin2@terawang.co', 'Terawang');
-			$mail->addAddress($to);
-			$mail->addReplyTo('admin2@terawang.co', 'Reply to this email');
-			$mail->isHTML(true);
-			$mail->Subject = $subject;
-			$mail->Body    = $body;
-			$mail->send();
-			//echo 'Message has been sent';
+    		$mail->SMTPDebug = 0;
+    		$mail->isSMTP();
+    		$mail->Host = 'mail.idjobfinder.xyz';
+    		$mail->SMTPAuth = true;
+    		$mail->Username = 'admin@idjobfinder.xyz';
+    		$mail->Password = '%J%}C+{2tE!B';
+    		$mail->SMTPSecure = 'ssl';
+    		$mail->Port = 465;
+    		$mail->setFrom('admin@idjobfinder.xyz', 'IDJobFinder Admin');
+    		$mail->addAddress($to, 'IDJobFinder User');
+    		$mail->addReplyTo('admin@idjobfinder.xyz', 'IDJobFinder Admin');
+    		$mail->isHTML(true);
+    		$mail->Subject = $subject;
+    		$mail->Body = $body;
+    		$mail->send();
 		} catch (Exception $e) {
-			//echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    		echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 		}
 	}
-	
-	public static function generateRandomNumber($length) {
-	    $result = '';
-	    for($i = 0; $i < $length; $i++) {
-	        $result .= mt_rand(0, 9);
-	    }
-	    return $result;
-	}
-	
+
 	public static function generateUUIDv4() {
 		return sprintf( '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
-	        mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ),
-	        mt_rand( 0, 0xffff ),
-	        mt_rand( 0, 0x0fff ) | 0x4000,
-	        mt_rand( 0, 0x3fff ) | 0x8000,
-	        mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff )
-	    );
+			mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ),
+			mt_rand( 0, 0xffff ),
+			mt_rand( 0, 0x0fff ) | 0x4000,
+			mt_rand( 0, 0x3fff ) | 0x8000,
+			mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff )
+		);
 	}
 }

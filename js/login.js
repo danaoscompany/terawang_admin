@@ -17,12 +17,15 @@ function login() {
 	})
 		.then(response => response.text())
 		.then(async (response) => {
+			console.log(response);
 			let obj = JSON.parse(response);
 			localStorage.setItem("user_id", parseInt(obj['user_id']));
 			let responseCode = parseInt(obj['response_code']);
 			if (responseCode == 1) {
-				window.location.href = API_URL+"/notification";
+				window.location.href = API_URL+"/user";
 			} else if (responseCode == -1) {
+				alert("Kombinasi email dan kata sandi salah");
+			} else if (responseCode == -2) {
 				alert("Kombinasi email dan kata sandi salah");
 			}
 		});

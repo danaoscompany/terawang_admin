@@ -25,7 +25,7 @@
 					<a class="navbar-brand w-100 mr-0" href="#" style="line-height: 25px;">
 						<div class="d-table m-auto">
 							<img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;" src="assets/images/shards-dashboards-logo.svg" alt="Shards Dashboard">
-							<span class="d-none d-md-inline ml-1">Terawang</span>
+							<span class="d-none d-md-inline ml-1">IDJobFinder</span>
 						</div>
 					</a>
 					<a class="toggle-sidebar d-sm-inline d-md-none d-lg-none">
@@ -64,8 +64,6 @@
 				<div class="row">
 					<div class="col">
 						<div style="width: 100%; display: flex; flex-direction: row; align-items: center; justify-content: flex-end;">
-							<button type="button" class="mb-2 btn btn-sm btn-primary mr-1" style=""
-									onclick="window.location.href='http://terawang.co/admin/user/add'">Tambah</button>
 						</div>
 						<div class="card card-small mb-4" style="margin-top: 8px;">
 							<div class="card-header border-bottom">
@@ -76,11 +74,9 @@
 									<thead class="bg-light">
 									<tr>
 										<th scope="col" class="border-0">#</th>
-										<th scope="col" class="border-0">Foto</th>
 										<th scope="col" class="border-0">Nama</th>
 										<th scope="col" class="border-0">Email</th>
 										<th scope="col" class="border-0">Password</th>
-										<th scope="col" class="border-0">Ubah</th>
 										<th scope="col" class="border-0">Hapus</th>
 									</tr>
 									</thead>

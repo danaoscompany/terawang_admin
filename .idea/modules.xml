@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/terawang.iml" filepath="$PROJECT_DIR$/.idea/terawang.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/idjobfinder.iml" filepath="$PROJECT_DIR$/.idea/idjobfinder.iml" />
     </modules>
   </component>
 </project>

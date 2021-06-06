@@ -41,6 +41,7 @@ function save() {
 	})
 		.then(response => response.text())
 		.then(async (response) => {
+			console.log(response);
 			let obj = JSON.parse(response);
 			let responseCode = parseInt(obj['response_code']);
 			if (responseCode == 1) {

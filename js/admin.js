@@ -13,18 +13,19 @@ function getAdmins() {
 			admins = JSON.parse(response);
 			for (let i=0; i<admins.length; i++) {
 				let admin = admins[i];
-				let profilePicture = admin['profile_picture'];
+				let profilePicture = admin['logo'];
 				if (profilePicture != null && profilePicture.trim() != "") {
 					profilePicture = USERDATA_URL+profilePicture;
 				} else {
-					profilePicture = 'http://terawang.co/admin/assets/images/profile_picture_placeholder.png';
+					profilePicture = 'http://192.168.43.254/idjobfinder/userdata/company_placeholder.png';
 				}
+				console.log(profilePicture);
 				$("#admins").append("<tr>\n" +
 					"\t\t\t\t\t\t\t\t\t\t<td>"+(i+1)+"</td>\n" +
-					"\t\t\t\t\t\t\t\t\t\t<td><img src='"+profilePicture+"' width='40px' height='40px' style='border-radius: 20px;'>"+"</td>\n" +
 					"\t\t\t\t\t\t\t\t\t\t<td>"+admin['name']+"</td>\n" +
 					"\t\t\t\t\t\t\t\t\t\t<td>"+admin['email']+"</td>\n" +
 					"\t\t\t\t\t\t\t\t\t\t<td>"+admin['password']+"</td>\n" +
+					"\t\t\t\t\t\t\t\t\t\t<td><img src='"+profilePicture+"' width='40px' height='40px' style='border-radius: 20px;'>"+"</td>\n" +
 					"\t\t\t\t\t\t\t\t\t\t<td><button type=\"button\" class=\"mb-2 btn btn-sm btn-primary mr-1\" onclick='edit("+i+")'>Ubah</button></td>\n" +
 					"\t\t\t\t\t\t\t\t\t\t<td><button type=\"button\" class=\"mb-2 btn btn-sm btn-danger mr-1\" onclick='confirmDelete("+i+")'>Hapus</button></td>\n" +
 					"\t\t\t\t\t\t\t\t\t</tr>");
@@ -58,5 +59,5 @@ function confirmDelete(index) {
 }
 
 function add() {
-	window.location.href = "http://terawang.co/admin/admin/add";
+	window.location.href = "http://192.168.43.254/idjobfinder/admin/add";
 }

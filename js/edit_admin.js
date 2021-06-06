@@ -14,7 +14,7 @@ $(document).ready(function() {
 		.then(async (response) => {
 			let obj = JSON.parse(response);
 			prevEmail = obj['email'];
-			let profilePicture = obj['profile_picture'];
+			let profilePicture = obj['logo'];
 			if (profilePicture != null && profilePicture.trim() != "") {
 				$("#profile-picture").attr("src", USERDATA_URL+profilePicture);
 			}
@@ -64,6 +64,7 @@ function save() {
 	})
 		.then(response => response.text())
 		.then(async (response) => {
+			console.log(response);
 			let obj = JSON.parse(response);
 			let responseCode = parseInt(obj['response_code']);
 			if (responseCode == 1) {
